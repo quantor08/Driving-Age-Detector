@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driving Age Checker</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f4f4;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            background:#fff;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.2);
+            width:400px;
+            text-align:center;
+        }
+
+        h2{
+            color:#333;
+        }
+
+        #result{
+            margin-top:20px;
+            font-size:20px;
+            font-weight:bold;
+        }
+
+        button{
+            padding:10px 20px;
+            font-size:16px;
+            background:green;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:darkgreen;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Driving Age Checker</h2>
+
+    <button onclick="checkAge()">Check Driving Eligibility</button>
+
+    <p id="result"></p>
+</div>
+
+<script>
+
+function checkAge(){
+
+    let userAge = Number(prompt("Enter your age:"));
+
+    if(userAge >= 18){
+
+        document.getElementById("result").innerHTML =
+        "✅ You are old enough to drive.";
+
+        console.log("User is old enough to drive.");
+
+    }else{
+
+        let yearsRemaining = 18 - userAge;
+
+        document.getElementById("result").innerHTML =
+        `❌ You are not old enough to drive. You have ${yearsRemaining} year(s) remaining.`;
+
+        console.log(`User needs ${yearsRemaining} more year(s) to drive.`);
+    }
+
+}
+
+</script>
+
+</body>
+</html>
